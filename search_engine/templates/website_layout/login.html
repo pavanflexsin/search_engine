@@ -1,0 +1,86 @@
+{% extends "website_layout/layout.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block home_page %}
+    <div class="mainCon">
+            <div class="signup-wrapper">
+                <div class="signup-inner flexBox align-items-center ">
+                    <div class="signup-left-sec">
+                        <div class="signup-formWrap">
+                            <div class="signup-header">
+                                <div class="logo small-logo"><span class="logo-redtxt">Search</span>Engine</div>
+                        <div class="create-ac-title">Log In</div>
+                            </div>
+                            <div class="signup-form-inner">
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    {% if form.errors %}
+                                        {% if form.non_field_errors %}
+                                            {% for non_error in form.non_field_errors %}
+                                                <div class="error"> {{non_error}} </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endif %}
+                                    <div class="form-group">
+                                        <label>Email/User Name</label>
+                                        {% render_field form.username placeholder='Email Or User Name' class="form-control" %}
+                                        {% if form.username.errors %}
+                                            {% for error in form.username.errors %}
+                                                <div id="{{ form.username.name }}-error" class="error invalid-feedback">
+                                                {{ error|escape }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <div class="input-group-addon-icon">
+                                            {% render_field form.password placeholder=form.password.label class="form-control"  %}
+                                            {% if form.password.errors %}
+                                                {% for error in form.password.errors %}
+                                                    <div id="{{ form.password.name }}-error" class="error invalid-feedback">
+                                                    {{ error|escape }}
+                                                    </div>
+                                                {% endfor %}
+                                            {% endif %}
+                                            <div class="password-iconWrap"><img src="{% static 'images/download.png' %}" class="toggle-password" alt="Search icon"></div>
+                                        </div>
+                                        <div class="forgot-password d-flex flex-row-reverse forgot-password"><a href="{% url 'accounts:forgotpasswordview' %}">Forgot password?</a>
+                                        </div>                                    
+                                    </div>
+                                    <div class="form-group signup-btn">
+                                        <button type="submit" class="btn">LOGIN</button>
+                                    </div>
+                                    <div class="tac already-have-account">Don’t have an account? <a href="{% url 'accounts:singupview' %}">signup</a> now</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="signup-right-sec mobView-hide">
+                        <div class="">
+                            <img src="{% static 'images/signup-sec-image.png' %}" alt="sign up">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            {% include 'website_layout/footer_layout.html'%}          
+    </div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript">
+    $('.toggle-password').on('click', function() {
+      let input = $("#id_password");
+      if (input.attr('type') == 'password') {
+        input.attr('type', 'text');
+        $(this).attr('src', '{% static "images/close-eye-icon.png" %}')
+
+      }
+      else {
+        input.attr('type', 'password');
+        $(this).attr('src', '{% static "images/download.png" %}')
+      }
+    });
+    </script>
+{% endblock %}

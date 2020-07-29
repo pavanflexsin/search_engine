@@ -1,0 +1,36 @@
+{% extends "website_layout/layout.html" %}
+{% load static %}
+
+{% block home_page %}
+    <div class="mainSearch-Wrapper">
+        <div class="header-loginBtnWrap">
+            <ul class="d-flex justify-content-end">
+                <li>
+                    <a href="{% url 'accounts:loginview' %}">LOGIN</a>
+                </li>
+                <li>
+                    <a href="{% url 'accounts:singupview' %}">SIGN UP</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search-midsection">
+            <div class="logo"><span class="logo-redtxt">Search</span>Engine</div>
+            <form>
+                <div class="flexBox justify-content-between mt-45">
+                    <div class="search-fieldWrap">
+                        <input type="text" name="search-field" class="form-control search-field" placeholder="">
+                        <div class="search-iconWrap">
+                            <img src="{% static 'images/search-icon.png' %}" alt="Search icon">
+                        </div>
+                        <div class="search-voice-iconWrap">
+                            <img src="{% static 'images/search-voice-icon.png' %}" alt="Search voice icon">
+                        </div>
+                    </div>
+                    <div class="search-btnWrap">
+                        <button type="submit" name="search-btn" class="btn search-btn">SEARCH</button>
+                    </div>
+                </div>
+            </form>                
+        </div>
+    </div>
+{% endblock %}

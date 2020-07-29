@@ -1,0 +1,113 @@
+@media (max-width: 1600px) {
+
+	.header-loginBtnWrap ul li a {width: 120px; padding: 10px 0;}
+
+	.search-midsection {max-width: 610px;}
+	.logo {font-size: 55px;}
+	.logo.small-logo {font-size: 40px !important;}
+	.create-ac-title {font-size: 21px;}
+	.search-midsection .mt-45 {margin-top: 25px;}
+
+	.search-fieldWrap {width: calc(100% - 135px);}	
+	.search-fieldWrap .form-control.search-field {padding: 10px 30px 10px 60px;}
+	.search-iconWrap {height: 30px; border-right: 1px solid #4285f4;}
+	.btn.search-btn {padding: 10px 34px; font-size: 14px;}
+
+	.signup-form-inner {padding: 25px; margin-top: 15px;}
+	.signup-inner, .mainCon-inner {min-height: calc(100vh - 43px);}
+	.form-control {padding: 8px 15px; font-size: 14px;}
+	.btn {padding: 6px 15px; font-size: 16px;}
+
+	.header-profile-name {font-size: 12px; padding-right: 55px;}
+	.header-profile-name span {font-size: 16px; line-height: 16px;}
+	.header-profile-image {width: 40px; height: 40px;}
+
+	.afterlogin-header-search-section {max-width: 500px;}
+	.afterlogin-header-search-section .search-fieldWrap {width: calc(100% - 110px);}
+	.afterlogin-header-search-section .search-fieldWrap .form-control.search-field {padding: 6px 30px 6px 60px;}
+	.afterlogin-header-search-section .search-iconWrap, 
+	.afterlogin-header-search-section .search-voice-iconWrap {top: 6px;}
+	.afterlogin-header-search-section .search-iconWrap img {height: 16px;}
+	.afterlogin-header-search-section .search-voice-iconWrap img {height: 21px;}
+	.afterlogin-header-search-section .btn.search-btn {padding: 6px 23px; }
+
+	.footer-right-nav ul li {margin-left: 30px; }
+	.footer-left-nav a, .footer-right-nav ul li a {padding: 10px 0px;}
+
+	textarea.comment-textarea {height: 100px;}
+}
+
+@media (max-width: 1199px) {
+	.logo.small-logo {font-size: 30px !important;}
+	.create-ac-title {font-size: 16px;}
+	.signup-form-inner {padding: 15px; margin-top: 10px;}
+	.form-group {margin-bottom: 10px;}
+
+	.afterlogin-header-search-section {max-width: 400px;}
+	.search-result-list {padding-right: 25px;}
+	.other-commnet-option ul li {padding: 0px 5px;}
+
+	textarea.comment-textarea {height: 75px;}
+}
+
+@media (max-width: 991px) {
+
+	.back-searchresult a {font-size: 13px; }
+	.comment-result-midCont-col {-ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%; height: auto;}
+	.comment-right-col .searchResult-viewComment-wrapper {padding-top: 0px;}
+	.searchEngine-modal-body {max-height: 470px;}
+}
+@media (max-width: 767px) {
+
+	.mobView-hide {display: none;}
+
+	.header-loginBtnWrap ul li a {width: 85px; padding: 5px 0; font-size: 13px;}
+	.logo {font-size: 35px;}
+	.search-midsection .mt-45 {margin-top: 15px; }
+	.search-fieldWrap {width: 100%; }
+	.search-fieldWrap .form-control.search-field {padding: 8px 30px 8px 60px;}
+	.search-btnWrap {width: 100%; margin-top: 15px; }
+	.btn.search-btn {padding: 8px 25px; font-size: 14px;}
+
+	.signup-inner, .mainCon-inner {min-height: calc(100vh - 40px);}
+	.signup-left-sec, .signup-right-sec {-ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%; }
+	.signup-formWrap {max-width: 450px;}
+	.tac.already-have-account {font-size: 13px; }
+
+	.desk-posi-order-2 {order: 1;}
+	.header-afterlogin .mobile-no-flex {display: -ms-block !important; display: block !important;}
+	.header-afterlogin .header-profile-name {width: 100%;}
+	.afterlogin-header-search-section {max-width: 100%; margin-top: 25px;}
+	.afterlogin-header-search-section .search-btnWrap {width: auto; margin-top: 0;}
+	.searchResult-viewComment-HD img {margin-right: 5px;}
+	.fine-resultNo {font-size: 12px;}
+
+	.search-result-midCont {padding-right: 15px !important;}
+	.search-result-midCont-col {-ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%; height: auto;}
+	.search-result-midCont-col.pd-r-35 {padding-left: 0px;}
+	.search-result-list {padding: 0px;}
+	.searchResult-topSec .searchResult-title {font-size: 14px;}
+	.searchResult-bottomSec {font-size: 12px; line-height: 18px;}
+	.searchResult-viewComment-wrapper {padding-top: 10px;}
+	.searchResult-viewComment-HD a {font-size: 12px;}
+
+	.other-commnet-option a {font-size: 10px;}
+
+	.search-result-popupFooter {margin-top: 15px;}
+	.search-result-popupWrap {padding: 0px;}
+	.search-result-popupFooter ul li {margin-right: 5px;}
+	.search-result-popupWrap .btn {padding: 6px 10px; font-size: 12px;}
+
+	/*.comment-saveBtnWrapper.flexBox  {display: -webkit-block; display: block;}*/
+	.comment-saveBtn .btn {width: 70px; font-size: 11.5px;}
+	.comment-help-option ul li {padding: 0px 5px;}
+	.comment-help-option ul li a {font-size: 10px;}
+
+	.footer-right-nav ul li {margin-left: 10px;}
+	.footer-left-nav a, .footer-right-nav ul li a {font-size: 13px;}
+}
+
+@media (min-width: 1600px) {
+	.header-loginBtnWrap {padding: 50px;}
+	.search-result-midCont-col {height: calc(100vh - 170px);}
+}

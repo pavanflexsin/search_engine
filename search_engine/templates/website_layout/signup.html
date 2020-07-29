@@ -1,0 +1,83 @@
+{% extends "website_layout/layout.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+
+{% block home_page %}
+<div class="mainCon">
+    <div class="signup-wrapper">
+        <div class="signup-inner flexBox align-items-center ">
+            <div class="signup-left-sec">
+                <div class="signup-formWrap">
+                    <div class="signup-header">
+                        <div class="logo small-logo"><span class="logo-redtxt">Search</span>Engine</div>
+                        <div class="create-ac-title">Create your account</div>
+                    </div>
+                    <div class="signup-form-inner">
+                        <form method="POST" action="">
+                            {% include 'website_layout/common_message.html'%}    
+
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>User Name<span class="asteric_sign">*</span></label>
+                                {{ form.username|attr:"autocomplete:off"|add_class:"form-control" }}
+                                {% for error in form.username.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group">
+                                <label>Email<span class="asteric_sign">*</span></label>
+                                {{ form.email|attr:"autocomplete:off"|add_class:"form-control" }}
+                                {% for error in form.email.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group">
+                                <label>Password<span class="asteric_sign">*</span></label>
+                                {{ form.password1|attr:"autocomplete:off"|add_class:"form-control"  }}
+                                {% for error in form.password1.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password<span class="asteric_sign">*</span></label>
+                                {{ form.password2|attr:"autocomplete:off"|add_class:"form-control"  }}
+                                {% for error in form.password2.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>                                
+                            <div class="form-group signup-btn">
+                                <button type="submit" class="btn">SIGN UP</button>
+                            </div>
+                            <div class="tac already-have-account">Already have an account? <a href="{% url 'accounts:loginview' %}">signin</a> now</div>
+                         </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="signup-right-sec mobView-hide">
+                <div class="">
+                    <img src="{% static 'images/signup-sec-image.png' %}" alt="sign up">
+                </div>
+            </div>
+        </div>
+    </div> 
+    {% include 'website_layout/footer_layout.html' %}      
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript">
+$('.toggle-password').on('click', function() {
+  $(this).toggleClass('fa-eye fa-eye-slash');
+  let input = $($(this).attr('toggle'));
+  if (input.attr('type') == 'password') {
+    input.attr('type', 'text');
+  }
+  else {
+    input.attr('type', 'password');
+  }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "website_layout/layout.html" %}
+{% load static %}
+{% block home_page %}
+    <div class="mainCon">
+            <div class="mainCon-inner">
+                <div class="mainSearch-Wrapper">
+                    <div class="header-afterlogin">
+                        <div class="d-flex flex-row-reverse">
+                            <div class="header-profile-sec d-flex align-items-center">
+                                <a href="{% url 'accounts:loginview' %}">Logout</a>
+                                <div class="header-profile-name">WELCOME <span>{{ request.user.first_name }} {{ request.user.last_name }}</span>
+                                 <div class="header-profile-image"><img src="{% static 'images/user-icon.png' %}" alt="user image"></div>   
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                    <div class="search-midsection">
+                        <div class="logo"><span class="logo-redtxt">Search</span>Engine</div>
+                        <form>
+                            <div class="flexBox justify-content-between mt-45">
+                            <div class="search-fieldWrap">
+                                <input type="text" name="search-field" class="form-control search-field" placeholder="">
+                                <div class="search-iconWrap"><img src="{% static 'images/search-icon.png' %}" alt="Search icon"></div>
+                                <div class="search-voice-iconWrap"><img src="{% static 'images/search-voice-icon.png' %}" alt="Search voice icon"></div>
+                            </div>
+                            
+                            <div class="search-btnWrap">
+                                <button type="submit" name="search-btn" class="btn search-btn">SEARCH</button>
+                            </div>
+                        </div>
+                        </form>                
+                    </div>
+                </div>
+            </div>
+            {% include 'website_layout/footer_layout.html'%}       
+    </div>
+{% endblock %}

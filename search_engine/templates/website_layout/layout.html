@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <title>Ivanna Search Engine</title>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fonts/stylesheet.css' %}" type="text/css">
+</head>
+<body>
+    <div class="mainCon">
+        {% block home_page %}
+            <!-- Home page  -->
+        {% endblock %}  
+    </div>
+{% block script %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+{% endblock %}
+</body>
+</html>
